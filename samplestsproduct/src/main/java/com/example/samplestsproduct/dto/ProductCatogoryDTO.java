@@ -7,7 +7,7 @@ public class ProductCatogoryDTO {
 
     private long productId;
     private String productName;
-    private String  productDesc;
+    private String productDesc;
     private String CategoryName;
     private String CategoryDesc;
 }
