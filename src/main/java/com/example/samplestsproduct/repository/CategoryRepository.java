@@ -1,8 +1,8 @@
 package com.example.samplestsproduct.repository;
 
-import com.example.samplestsproduct.model.Categories;
+import com.example.samplestsproduct.model.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CategoryRepository extends JpaRepository<Categories, Long> {
+public interface CategoryRepository extends JpaRepository<Category, Long> {
 
 }

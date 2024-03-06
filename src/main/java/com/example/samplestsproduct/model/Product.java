@@ -1,12 +1,17 @@
 package com.example.samplestsproduct.model;
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.hibernate.annotations.Cascade;
+import java.util.HashSet;
+import java.util.Set;
 
-import java.util.List;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import lombok.Data;
 
 @Data
 @Entity
@@ -15,8 +20,6 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     @Column(name = "productId")
     private Long productId;
 
@@ -83,8 +86,7 @@ public class Product {
     @Column(name = "note")
     private String note;
 
-   // @ManyToOne(fetch = FetchType.EAGER,optional = true)
-   @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "category_id")
-    private Categories categories;
+    private Set<Category> categories = new HashSet<>();
 }

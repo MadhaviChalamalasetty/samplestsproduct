@@ -11,8 +11,8 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "categories")
-public class Categories {
+@Table(name = "category")
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,8 +21,7 @@ public class Categories {
     private String categoryDesc;
     private double categoryValue;
 
-    @OneToMany
-    @MapsId
+    @OneToOne
     @JoinColumn(name= "productId")
-    private List<Product>  product  = new ArrayList<>();
+    private Product  product;
 }

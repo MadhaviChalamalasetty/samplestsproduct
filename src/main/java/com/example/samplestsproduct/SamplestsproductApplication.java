@@ -1,6 +1,6 @@
 package com.example.samplestsproduct;
 
-import com.example.samplestsproduct.model.Categories;
+import com.example.samplestsproduct.model.Category;
 import com.example.samplestsproduct.model.Product;
 import com.example.samplestsproduct.repository.CategoryRepository;
 import com.example.samplestsproduct.repository.ProductRepository;
