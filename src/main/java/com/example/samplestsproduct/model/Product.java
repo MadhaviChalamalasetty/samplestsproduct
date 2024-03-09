@@ -9,7 +9,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -85,8 +87,12 @@ public class Product {
 
     @Column(name = "note")
     private String note;
-
-    @ManyToOne
-    @JoinColumn(name = "category_id")
-    private Set<Category> categories = new HashSet<>();
+    
+    @OneToMany(mappedBy="product")
+    private Set<Attribute> attributes = new HashSet<>();
+    
+    @OneToMany(mappedBy="product")
+    private Set<ProductCategory> productCategories = new HashSet<>();
+    
+    
 }
